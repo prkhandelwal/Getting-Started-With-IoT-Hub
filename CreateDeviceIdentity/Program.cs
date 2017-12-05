@@ -12,8 +12,27 @@ namespace CreateDeviceIdentity
     {
         static RegistryManager registryManager;
         static string connectionString = "{IoT  Hub Connection String Goes Here}";
+        
         static void Main(string[] args)
         {
+
+        }
+
+        private static async Task AddDeviceAsync()
+        {
+            string deviceId = "myIoTDevice";
+            Device device;
+            try
+            {
+                device = await registryManager.AddDeviceAsync(new Device(deviceId));
+            }
+
+            catch
+            {
+                device = await registryManager.GetDeviceAsync(deviceId);
+            }
+
+            Console.WriteLine("Generated device key: {0}", device.Authentication.SymmetricKey.PrimaryKey);
         }
     }
 }
