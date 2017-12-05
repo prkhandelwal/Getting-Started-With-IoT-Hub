@@ -15,7 +15,9 @@ namespace CreateDeviceIdentity
         
         static void Main(string[] args)
         {
-
+            registryManager = RegistryManager.CreateFromConnectionString(connectionString);
+            AddDeviceAsync().Wait();
+            Console.ReadLine();
         }
 
         private static async Task AddDeviceAsync()
