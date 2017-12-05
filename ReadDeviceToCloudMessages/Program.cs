@@ -11,7 +11,6 @@ namespace ReadDeviceToCloudMessages
     class Program
     {
         static string connectionString = "{IoT  Hub Connection String Goes Here}";
-        
         static string iotHubD2cEndpoint = "messages/events";
         static EventHubClient eventHubClient;
         static void Main(string[] args)

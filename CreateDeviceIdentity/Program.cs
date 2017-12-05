@@ -12,7 +12,6 @@ namespace CreateDeviceIdentity
     {
         static RegistryManager registryManager;
         static string connectionString = "{IoT  Hub Connection String Goes Here}";
-        
         static void Main(string[] args)
         {
             registryManager = RegistryManager.CreateFromConnectionString(connectionString);
